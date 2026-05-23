@@ -2,6 +2,7 @@ volumes:
   pg_data:
   static:
   media:
+  taski_static:
 
 services:
   db:
@@ -50,6 +51,3 @@ services:
 
   taski_frontend:
     image: lkofe1/taski_frontend:latest
-
-volumes:
-  taski_static:
