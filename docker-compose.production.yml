@@ -51,5 +51,5 @@ services:
   taski_frontend:
     image: lkofe1/taski_frontend:latest
 
-  volumes:
-   taski_static:
+volumes:
+  taski_static:
