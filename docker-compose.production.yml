@@ -26,21 +26,6 @@ services:
     volumes:
       - static:/static
 
-  gateway:
-    image: lkofe1/kittygram_gateway:latest
-    env_file: .env
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - static:/static/
-      - media:/media/
-      - /var/www/certbot:/var/www/certbot
-      - /etc/letsencrypt:/etc/letsencrypt:ro
-    depends_on:
-      - backend
-      - frontend
-
   taski_backend:
     image: lkofe1/taski_backend:latest
     env_file: .env
@@ -51,3 +36,23 @@ services:
 
   taski_frontend:
     image: lkofe1/taski_frontend:latest
+    volumes:
+      - taski_static:/app/static/
+
+  gateway:
+    image: lkofe1/kittygram_gateway:latest
+    env_file: .env
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - static:/static/
+      - media:/media/
+      - taski_static:/taski_static/
+      - /var/www/certbot:/var/www/certbot
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    depends_on:
+      - backend
+      - frontend
+      - taski_backend
+      - taski_frontend
