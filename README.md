@@ -1,6 +1,6 @@
 # Проект Kittygram 
 
-![Kittygram Workflow](https://github.com/lkofe1/kittygra_final/actions/workflows/kittygram_workflow.yml/badge.svg)
+![Kittygram Workflow](https://github.com/lkofe1/kittygra_final/actions/workflows/main.yml/badge.svg)
 
 ## Описание
 **Kittygram** — это социальная сеть для любителей котиков. Проект представляет собой полноценное веб-приложение, где пользователи могут регистрироваться, публиковать фотографии своих питомцев, указывать их характеристики (имя, достижения, возраст и цвет), а также просматривать карточки котиков других пользователей.

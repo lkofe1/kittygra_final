@@ -1,15 +1,13 @@
-# flake8: noqa 
+import os
+from pathlib import Path
 
-import os 
-from pathlib import Path 
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-BASE_DIR = Path(__file__).resolve().parent.parent 
-
-SECRET_KEY = os.getenv('SECRET_KEY', 'default-key') 
+SECRET_KEY = os.getenv('SECRET_KEY', 'default-key')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost,158.160.224.159,backend,gateway').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost,158.160.224.159,backend,gateway,kittygram12.ydns.eu').split(',')
 
 INSTALLED_APPS = [ 
     'django.contrib.admin', 
