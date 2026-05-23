@@ -10,9 +10,16 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default-key')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = os.getenv(
-        'ALLOWED_HOSTS',
-        '127.0.0.1,localhost,158.160.224.159,backend,gateway'
-    ).split(',')
+    'ALLOWED_HOSTS',
+    '127.0.0.1,localhost,158.160.224.159,backend,gateway,kittygram12.ydns.eu,taski.ydns.eu'
+).split(',')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://kittygram12.ydns.eu',
+    'https://taski.ydns.eu',
+    'http://kittygram12.ydns.eu',
+    'http://taski.ydns.eu',
+]
 
 
 INSTALLED_APPS = [
