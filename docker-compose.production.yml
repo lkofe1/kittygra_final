@@ -41,7 +41,7 @@ services:
       - frontend
 
   taski_backend:
-    image: ${{ secrets.DOCKER_USERNAME }}/taski_backend:latest
+    image: lkofe1/taski_backend:latest
     env_file: .env
     volumes:
       - taski_static:/app/static/
@@ -49,7 +49,7 @@ services:
       - db
 
   taski_frontend:
-    image: ${{ secrets.DOCKER_USERNAME }}/taski_frontend:latest
+    image: lkofe1/taski_frontend:latest
 
   volumes:
    taski_static:
