@@ -1,0 +1,6 @@
+name: Kittygram workflow
+
+on:
+  push:
+    branches:
+      - main
