@@ -22,7 +22,6 @@ services:
 
   frontend:
     image: lkofe1/kittygram_frontend:latest
-    container_name: frontend
     env_file: .env
     volumes:
       - static:/static
@@ -37,7 +36,6 @@ services:
 
   taski_frontend:
     image: lkofe1/taski_frontend:latest
-    container_name: taski_frontend
     volumes:
       - taski_static:/app/build/
 
