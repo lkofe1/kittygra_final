@@ -39,3 +39,19 @@ services:
     depends_on:
       - backend
       - frontend
+
+taski_backend:
+    image: ${{ secrets.DOCKER_USERNAME }}/taski_backend:latest
+    env_file: .env
+    volumes:
+      - taski_static:/app/static/
+    depends_on:
+      - db
+
+  taski_frontend:
+    image: ${{ secrets.DOCKER_USERNAME }}/taski_frontend:latest
+
+
+volumes:
+
+  taski_static:
