@@ -7,12 +7,14 @@ volumes:
 services:
   db:
     image: postgres:13
+    restart: always
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
 
   backend:
     image: lkofe1/kittygram_backend:latest
+    restart: always
     env_file: .env
     volumes:
       - static:/app/static/
@@ -22,12 +24,14 @@ services:
 
   frontend:
     image: lkofe1/kittygram_frontend:latest
+    restart: always
     env_file: .env
     volumes:
       - static:/static
 
   taski_backend:
     image: lkofe1/taski_backend:latest
+    restart: always
     env_file: .env
     volumes:
       - taski_static:/app/static/
@@ -36,11 +40,13 @@ services:
 
   taski_frontend:
     image: lkofe1/taski_frontend:latest
+    restart: always
     volumes:
       - taski_static:/app/build/
 
   gateway:
     image: lkofe1/kittygram_gateway:latest
+    restart: always
     env_file: .env
     ports:
       - "80:80"
