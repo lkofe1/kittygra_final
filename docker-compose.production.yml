@@ -24,7 +24,7 @@ services:
 
   frontend:
     image: lkofe1/kittygram_frontend:latest
-    restart: always
+    restart: on-failure
     env_file: .env
     volumes:
       - static:/static
@@ -40,7 +40,7 @@ services:
 
   taski_frontend:
     image: lkofe1/taski_frontend:latest
-    restart: always
+    restart: on-failure
     volumes:
       - taski_static:/app/build/
 
